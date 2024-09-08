@@ -179,8 +179,9 @@ const firstDataForEachDate = uniqueDates.map((date) => {
     <WeatherDetails key={i}
     description={d?.weather[0].description ?? ""}
     Weathericon={d?.weather[0].icon ?? "01d"}
-date={format(parseISO(d?.dt_txt ?? ""),"dd.MM")}
-day={format(parseISO(d?.dt_txt ?? ""),"EEEE")}
+    date={d?.dt_txt ? format(parseISO(d.dt_txt), "dd.MM") : ""}
+    day={d?.dt_txt ? format(parseISO(d.dt_txt), "EEEE") : ""}
+    
 feels_like={d?.main.feels_like ?? 0}
                   temp={d?.main.temp ?? 0}
                   temp_max={d?.main.temp_max ?? 0}
